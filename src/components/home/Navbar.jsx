@@ -42,10 +42,12 @@ export default function Navbar() {
       {/* mobile menu */}
       {toggleMenu ? (
         <>
-          <div className={`lg:hidden w-full flex flex-col h-screen bg-black absolute`}>
+          <div
+            className={`lg:hidden w-full flex flex-col h-screen bg-black absolute`}
+          >
             <button
               onClick={() => setToggleMenu(false)}
-              className="w-9 h-8 px-2 py-[6px] text-white text-lg bg-[#19be9c]"
+              className="m-2 px-2 py-[6px] text-white text-2xl"
             >
               <ImCross />
             </button>
@@ -78,7 +80,7 @@ export default function Navbar() {
       ) : (
         <button
           onClick={() => setToggleMenu(true)}
-          className="w-9 h-8 px-2 py-[6px] text-white text-lg bg-[#19be9c] lg:hidden transition-all duration-500 ease-in-out"
+          className="m-2 px-2 py-[6px] text-white text-2xl lg:hidden"
         >
           <FaBars />
         </button>

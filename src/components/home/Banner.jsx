@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Banner() {
   return (
-    <div className="lg:w-full flex flex-col lg:flex-row lg:justify-around items-center gap-10 p-4 lg:py-12 lg:pr-24">
+    <div className="lg:w-full flex flex-col lg:flex-row lg:justify-around items-center gap-10 p-3 lg:py-12 lg:pr-24">
       <div className="flex flex-col gap-6 items-center lg:w-1/2 lg:items-start py-6 text-center lg:text-left lg:pl-16 lg:pb-20">
         <h1 className="text-5xl text-white font-bold ">Learn Quran Online</h1>
         <p className="text-white text-lg leading-none lg:w-2/3">

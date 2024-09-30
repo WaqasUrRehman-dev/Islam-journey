@@ -29,7 +29,7 @@ export default function Classroom() {
     },
   ];
   return (
-    <div className="w-full bg-sky-300 p-5 py-14 flex flex-col gap-16 lg:gap-24 items-center">
+    <div className="w-full bg-blue-400 p-5 py-14 flex flex-col gap-16 lg:gap-24 items-center">
       <div>
         <h1 className="text-3xl lg:text-5xl font-extrabold text-center px-1">
           Advances Classroom to Learn Quran Online
@@ -49,68 +49,41 @@ export default function Classroom() {
       ))}
       {/* for deckstop menu */}
       <div className="hidden w-full lg:flex flex-col items-center gap-10 px-20">
-        <div className="w-full flex items-center gap-10">
-          <div className="w-[45%]">
-            <img
-              className="w-full h-full"
-              src="https://qutor.com/assets/new/Quran%20online%20classroom.png"
-              alt=""
-            />
-          </div>
-          <div className="w-[50%]">
-            <p className="text-4xl font-light tracking-tight">
-              <span className="font-extrabold ">Interactive Quran: </span>
-              Learning Quran online is knowledge for kids and adults
-            </p>
-          </div>
-        </div>
-        <div className="w-full flex items-center gap-10">
-          <div className="w-[50%]">
-            <p className="text-4xl font-light tracking-tight">
-              <span className="font-extrabold ">Enhanced Learning: </span>
-              Video and Audio Streaming, Text Chat and White Board help you
-              learn Tajweed online
-            </p>
-          </div>
-          <div className="w-[45%]">
-            <img
-              className="w-full h-full"
-              src="https://qutor.com/assets/new/Interactive%20Quran%20Learning%20Online.png"
-              alt=""
-            />
-          </div>
-        </div>
-        <div className="w-full flex items-center gap-10">
-          <div className="w-[45%]">
-            <img
-              className="w-full h-full"
-              src="https://qutor.com/assets/new/Learn%20Quran%20for%20Kids.png"
-              alt=""
-            />
-          </div>
-          <div className="w-[50%]">
-            <p className="text-4xl font-light tracking-tight">
-              <span className="font-extrabold ">Parental Watch: </span>
-              Parents can monitor their child through video snippets as they
-              learn Quran online
-            </p>
-          </div>
-        </div>
-        <div className="w-full flex items-center gap-10">
-          <div className="w-[50%]">
-            <p className="text-4xl font-light tracking-tight">
-              <span className="font-extrabold ">Archiving: </span>
-              Record and play back your online Quran class for Tajweed and Hifz
-            </p>
-          </div>
-          <div className="w-[45%]">
-            <img
-              className="w-full h-full"
-              src="https://qutor.com/assets/new/Best%20Quran%20Learning%20website.png"
-              alt=""
-            />
-          </div>
-        </div>
+        {data.map((item, index) =>
+          index % 2 === 0 ? (
+            <div key={index} className="w-full flex items-center gap-10">
+              <div className="w-[45%]">
+                <img
+                  className="w-full h-full"
+                  src={item.image}
+                  alt=""
+                />
+              </div>
+              <div className="w-[50%]">
+                <p className="text-4xl font-light tracking-tight">
+                  <span className="font-extrabold ">{item.description1} </span>
+                  {item.description2}
+                </p>
+              </div>
+            </div>
+          ) : (
+            <div key={index} className="w-full flex items-center gap-10">
+              <div className="w-[50%]">
+                <p className="text-4xl font-light tracking-tight">
+                  <span className="font-extrabold ">{item.description1} </span>
+                  {item.description2}
+                </p>
+              </div>
+              <div className="w-[45%]">
+                <img
+                  className="w-full h-full"
+                  src={item.image}
+                  alt=""
+                />
+              </div>
+            </div>
+          )
+        )}
       </div>
       <div className="flex flex-col items-center justify-center text-center gap-3 lg:px-28">
         <div>

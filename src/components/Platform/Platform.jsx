@@ -37,7 +37,7 @@ export default function Platform() {
     },
   ];
   return (
-    <div className="w-full flex flex-col items-center gap-10 bg-sky-300 py-6">
+    <div className="w-full flex flex-col items-center gap-10 bg-blue-500 py-6">
       <div className="p-4">
         <h1 className="lg:text-5xl text-4xl font-extrabold text-center">
           Most trusted platform to learn Quran
