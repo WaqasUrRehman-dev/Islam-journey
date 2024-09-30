@@ -10,7 +10,7 @@ export default function Navbar() {
     "Find Teacher",
     "Pricing",
     "Mobile App",
-    "Contact",
+    "Contact Us",
     "Blog",
   ];
   return (
@@ -80,7 +80,7 @@ export default function Navbar() {
       ) : (
         <button
           onClick={() => setToggleMenu(true)}
-          className="m-2 px-2 py-[6px] text-white text-2xl lg:hidden"
+          className="p-2 text-white text-2xl lg:hidden"
         >
           <FaBars />
         </button>
