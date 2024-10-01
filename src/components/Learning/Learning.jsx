@@ -22,7 +22,7 @@ export default function Learning() {
     },
   ];
   return (
-    <div className="w-full lg:h-screen flex flex-col items-center lg:justify-around gap-4 py-8">
+    <div id="teacher" className="w-full lg:h-screen flex flex-col items-center lg:justify-around gap-4 py-8">
       <div className="pt-2">
         <h1 className="lg:text-6xl text-4xl text-center text-[#14a77f] lg:text-slate-700 font-bold px-4">
           3 steps to learn Quran online

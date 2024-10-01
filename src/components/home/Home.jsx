@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 
 function Home() {
   return (
-    <div className="bg-blue-500 w-full">
+    <div id="home" className="bg-blue-500 w-full">
       <Navbar />
       <Banner />
     </div>

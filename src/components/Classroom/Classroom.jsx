@@ -29,7 +29,7 @@ export default function Classroom() {
     },
   ];
   return (
-    <div className="w-full bg-blue-400 p-5 py-14 flex flex-col gap-16 lg:gap-24 items-center">
+    <div id="mobile" className="w-full bg-blue-400 p-5 py-14 flex flex-col gap-16 lg:gap-24 items-center">
       <div>
         <h1 className="text-3xl lg:text-5xl font-extrabold text-center px-1">
           Advances Classroom to Learn Quran Online
