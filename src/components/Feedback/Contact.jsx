@@ -1,13 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
+import emailjs from "emailjs-com";
 
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  console.log(formData);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+    };
+    emailjs
+      .send(
+        "service_ij87kcr",
+        "template_qsc0faa",
+        templateParams,
+        "od_waMZP0pWd_oihS"
+      )
+      .then(
+        (response) => {
+          console.log("Email sent successfully!", response);
+          alert("Email sent successfully!");
+          setFormData({ name: "", email: "", message: "" });
+        },
+        (error) => {
+          console.error("Error sending email:", error);
+          alert("Error sending email. Please try again later.");
+        }
+      );
+  };
+
   return (
     <div id="contact" className="w-full h-auto bg-blue-500 py-6">
       <div className="lg:w-1/2 mx-auto p-6">
         <h1 className="text-center text-4xl font-bold text-white">
           Contact Us
         </h1>
-        <form action="#" className="lg:w-[75%] lg:mx-auto">
+        <form onSubmit={sendEmail} className="lg:w-[75%] lg:mx-auto">
           <div className="pt-10">
             <label htmlFor="name" className="text-xl text-white font-semibold">
               Name
@@ -15,6 +59,9 @@ function Contact() {
             <input
               type="text"
               id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
               className="w-full p-2 mt-3 text-white placeholder:text-zinc-50 border-b-2 border-gray-300 outline-none bg-transparent "
               placeholder="Enter Your Name"
               autoComplete="off"
@@ -27,6 +74,9 @@ function Contact() {
             <input
               type="text"
               id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
               className="w-full p-2 mt-3 text-white placeholder:text-zinc-50 border-b-2 border-gray-300 outline-none bg-transparent "
               placeholder="Enter Your Email"
               autoComplete="off"
@@ -42,6 +92,8 @@ function Contact() {
             <textarea
               name="message"
               id="message"
+              value={formData.message}
+              onChange={handleChange}
               cols="30"
               rows="1"
               placeholder="Give your valuable feedback"

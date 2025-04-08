@@ -3,7 +3,6 @@ import Home from "./components/home/Home";
 import RatingandReview from "./components/RatingandReview/RatingandReview";
 import Learning from "./components/Learning/Learning";
 import Platform from "./components/Platform/Platform";
-import Feedback from "./components/Feedback/Feedback";
 import Classroom from "./components/Classroom/Classroom";
 import Teaching from "./components/Teaching/Teaching";
 import Contact from "./components/Feedback/Contact";
@@ -20,7 +19,6 @@ export default function App() {
       <RatingandReview />
       <Learning />
       <Platform />
-      {/* <Feedback /> */}
       <Cards />
       <Classroom />
       <Teaching />
