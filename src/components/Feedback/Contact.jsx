@@ -18,32 +18,52 @@ function Contact() {
     });
   };
 
-  const sendEmail = (e) => {
-    e.preventDefault();
-    const templateParams = {
-      name: formData.name,
-      email: formData.email,
-      message: formData.message,
-    };
-    emailjs
-      .send(
-        "service_ij87kcr",
-        "template_qsc0faa",
-        templateParams,
-        "od_waMZP0pWd_oihS"
-      )
-      .then(
-        (response) => {
-          console.log("Email sent successfully!", response);
-          alert("Email sent successfully!");
-          setFormData({ name: "", email: "", message: "" });
-        },
-        (error) => {
-          console.error("Error sending email:", error);
-          alert("Error sending email. Please try again later.");
-        }
-      );
+
+const sendEmail = (e) => {
+  e.preventDefault();
+  const templateParams = {
+    name: formData.name,
+    email: formData.email,
+    message: formData.message,
   };
+
+  // Send to yourself
+  emailjs
+    .send(
+      "service_ij87kcr",
+      "template_qsc0faa",
+      templateParams,
+      "od_waMZP0pWd_oihS"
+    )
+    .then((response) => {
+      console.log("Email sent to me!", response);
+
+      // Send auto-reply to user
+      emailjs
+        .send(
+          "service_ij87kcr",
+          "template_jrhn1gd",
+          templateParams,
+          "od_waMZP0pWd_oihS"
+        )
+        .then(() => {
+          alert("Message sent! You’ll get a confirmation email shortly.");
+          setFormData({ name: "", email: "", message: "" });
+        })
+        .catch((error) => {
+          console.error("Error sending auto-reply:", error);
+          alert("Message sent but confirmation email failed.");
+        });
+    })
+    .catch((error) => {
+      console.error("Error sending to me:", error);
+      alert("Error sending message. Please try again later.");
+    });
+};
+
+
+
+
 
   return (
     <div id="contact" className="w-full h-auto bg-blue-500 py-6">
