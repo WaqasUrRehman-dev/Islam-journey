@@ -62,9 +62,6 @@ const sendEmail = (e) => {
 };
 
 
-
-
-
   return (
     <div id="contact" className="w-full h-auto bg-blue-500 py-6">
       <div className="lg:w-1/2 mx-auto p-6">
